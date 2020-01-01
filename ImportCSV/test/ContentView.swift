@@ -110,6 +110,7 @@ extension DocumentPickerViewController: UIViewControllerRepresentable {
            
             globalPathToCsv = url
             csvToList()
+        
         }
 
         func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {

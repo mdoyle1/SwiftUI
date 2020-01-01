@@ -10,21 +10,21 @@ import Foundation
 import SwiftUI
 
 
-
 struct SectionView : View {
     @State var dict = [String: String]()
     var body: some View {
-        let keys = dict.map{$0.key}
-        let values = dict.map {$0.value}
-
-        return  ForEach(keys.indices) {index in
-            HStack {
-                Text(keys[index] + " " + values[index])
+        var computers = ""
+        for (key, value) in dict {
+            var x=0
+            let item = key + " " + value + "\n"
+            if x < headers.count {
+            computers+=item
+            x+=1
             }
         }
-    }
+        return Text(computers)
 }
-
+}
 struct ListView: View {
 
     var body: some View {
@@ -37,5 +37,5 @@ struct ListView: View {
             }
         }
     }
-    
 }
+

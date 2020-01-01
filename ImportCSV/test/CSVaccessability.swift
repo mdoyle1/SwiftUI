@@ -9,6 +9,24 @@
 import Foundation
 import SwiftCSV
 
+var arrayOfData = [CSVData]()
+
+
+struct CSVData {
+    var id = UUID()
+    var Items: [String:String]
+}
+    func arrayFiller(){
+    if arrayOfData.count > 0 {
+        arrayOfData.removeAll()
+    }
+
+    for item in csvArray {
+        arrayOfData.append(CSVData(Items: item))
+    }
+      
+}
+
 
 var csvData:[[String]]!
 var headers:[String] = []
@@ -26,6 +44,8 @@ func csvToList(){
                          print(csvArray[0][headers[0]] as Any)
                              } catch {print("contents could not be loaded")}}
                                 else {print("the URL was bad!")}
+   // arrayFiller()
+    //shitList()
   
     }
 
