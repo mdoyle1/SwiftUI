@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 var formatedList:[String] = []
-
 var headerList:[String] = []
 
 
@@ -22,11 +21,11 @@ headerList.removeAll{ $0 == header }
     print(headerList)
 }
 
+//building the list for the ListView() to display
+//takes csvArray and appends each item to formatedList
 func listBuilder(){
-    
     for item in csvArray {
         var computers = ""
-        
         for (key, value) in item {
             var x=0
             let item = key + ":  " + value + "\n"
@@ -41,22 +40,18 @@ func listBuilder(){
 
 struct HeaderView: View {
     @State private var selectedHeader: String?
-//    @State var headerArray: [String]
     var body: some View {
         List {
             ForEach(headers, id:\.self) { header in
-                
                  Button(action: {print(header)
                     buildHeaderList(header: header)
-                 }){
-                               // if self.showHeaders{
+                    }) {
                     Text(header)
-                     .listRowBackground(self.selectedHeader == header ? Color.blue : Color(UIColor.systemGroupedBackground))
-                        
-                    
-                    
-                                               }
-                //}
+                     .background(Color.green) // 1. Change the background color to purple
+                     .foregroundColor(.white)  // 2. Set the foreground/font color to white
+                     .font(.title)             // 3. Change the font type
+                     .padding()
+                      }.listRowBackground(self.selectedHeader == header ? Color.blue : Color(UIColor.systemGroupedBackground))
             }
         }
     }
