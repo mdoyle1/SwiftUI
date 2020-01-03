@@ -22,6 +22,7 @@
 		8B47B03723B692CD00089420 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47B03623B692CD00089420 /* ToggleView.swift */; };
 		8B47B03923B692E700089420 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47B03823B692E700089420 /* ListView.swift */; };
 		8BB0C4F423BE4CD100359C1E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0C4F323BE4CD100359C1E /* SearchBar.swift */; };
+		8BC3233723BFC038002504E7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3233623BFC038002504E7 /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8B47B03623B692CD00089420 /* ToggleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		8B47B03823B692E700089420 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8BB0C4F323BE4CD100359C1E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		8BC3233623BFC038002504E7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		9B7D42DCB43E0C9962462A4A /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		ADB40EC5086B287ED5BBEB83 /* Pods-test-testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-testUITests.release.xcconfig"; path = "Target Support Files/Pods-test-testUITests/Pods-test-testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B840FB8F4D8D3241D609FF74 /* Pods-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTests.debug.xcconfig"; path = "Target Support Files/Pods-testTests/Pods-testTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				8B47B03623B692CD00089420 /* ToggleView.swift */,
 				8B47B03823B692E700089420 /* ListView.swift */,
 				8BB0C4F323BE4CD100359C1E /* SearchBar.swift */,
+				8BC3233623BFC038002504E7 /* NavigationBar.swift */,
 				8B47B00623B5BF0000089420 /* SceneDelegate.swift */,
 				8B47B00823B5BF0000089420 /* ContentView.swift */,
 				8B47B00F23B5BF0200089420 /* LaunchScreen.storyboard */,
@@ -430,6 +433,7 @@
 				8BB0C4F423BE4CD100359C1E /* SearchBar.swift in Sources */,
 				8B47B00523B5BF0000089420 /* AppDelegate.swift in Sources */,
 				8B47B03523B692A800089420 /* CSVaccessability.swift in Sources */,
+				8BC3233723BFC038002504E7 /* NavigationBar.swift in Sources */,
 				8B47B03923B692E700089420 /* ListView.swift in Sources */,
 				8B47B00723B5BF0000089420 /* SceneDelegate.swift in Sources */,
 				8B47B03723B692CD00089420 /* ToggleView.swift in Sources */,

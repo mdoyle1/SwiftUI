@@ -10,9 +10,20 @@ import Foundation
 import SwiftUI
 
 var formatedList:[String] = []
-var keys:[String] = []
-var values:[String] = []
+
+var headerList:[String] = []
+
+
+//Build a header list to sort data.
+func buildHeaderList(header: String){
+if headerList.contains(header){
+headerList.removeAll{ $0 == header }
+} else {headerList.append(header)}
+    print(headerList)
+}
+
 func listBuilder(){
+    
     for item in csvArray {
         var computers = ""
         
@@ -28,23 +39,32 @@ func listBuilder(){
     }
 }
 
-//struct SectionView : View {
-//    @State var dict = [String: String]()
-//    var body: some View {
-//        var computers = ""
-//        for (key, value) in dict {
-//            var x=0
-//            let item = key + " " + value + "\n"
-//            if x < headers.count {
-//            computers+=item
-//            x+=1
-//            }
-//        }
-//        return Text(computers)
-//}
-//}
-    
-    
+struct HeaderView: View {
+    @State private var selectedHeader: String?
+//    @State var headerArray: [String]
+    var body: some View {
+        List {
+            ForEach(headers, id:\.self) { header in
+                
+                 Button(action: {print(header)
+                    buildHeaderList(header: header)
+                 }){
+                               // if self.showHeaders{
+                    Text(header)
+                     .listRowBackground(self.selectedHeader == header ? Color.blue : Color(UIColor.systemGroupedBackground))
+                        
+                    
+                    
+                                               }
+                //}
+            }
+        }
+    }
+}
+
+
+//This ListView presents the search Data...
+//Create another list view to display
 struct ListView: View {
     @State private var searchTerm: String = ""
     @State private var array: [String] = []

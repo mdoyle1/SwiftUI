@@ -28,7 +28,7 @@ struct SearchBar: UIViewRepresentable {
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
             array = []
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
                   self.array = formatedList.filter {
                     self.text.isEmpty ? true : (($0.localizedCaseInsensitiveContains(self.text)))}

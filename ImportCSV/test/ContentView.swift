@@ -17,7 +17,7 @@ var globalPathToCsv:URL!
 struct ContentView: View {
     @EnvironmentObject var viewToggle: ToggleView
     @State private var isPresented = false
-
+    @State var showHeaders = true
     
 
       var body: some View {
@@ -35,6 +35,7 @@ struct ContentView: View {
 
             
             if viewToggle.toggleView {
+                HeaderView()
                 ListView()
                         }
                    }
