@@ -9,33 +9,52 @@
 import Foundation
 import SwiftUI
 
-
-struct SectionView : View {
-    @State var dict = [String: String]()
-    var body: some View {
+var formatedList:[String] = []
+var keys:[String] = []
+var values:[String] = []
+func listBuilder(){
+    for item in csvArray {
         var computers = ""
-        for (key, value) in dict {
+        
+        for (key, value) in item {
             var x=0
-            let item = key + " " + value + "\n"
+            let item = key + ":  " + value + "\n"
             if x < headers.count {
             computers+=item
             x+=1
             }
         }
-        return Text(computers)
+        formatedList.append(computers)
+    }
 }
-}
-struct ListView: View {
 
+//struct SectionView : View {
+//    @State var dict = [String: String]()
+//    var body: some View {
+//        var computers = ""
+//        for (key, value) in dict {
+//            var x=0
+//            let item = key + " " + value + "\n"
+//            if x < headers.count {
+//            computers+=item
+//            x+=1
+//            }
+//        }
+//        return Text(computers)
+//}
+//}
+    
+    
+struct ListView: View {
+    @State private var searchTerm: String = ""
+    @State private var array: [String] = []
     var body: some View {
   
         List {
-            ForEach(csvArray, id:\.self) { dict in
-                           Section {
-                            SectionView(dict: dict)
-                           }
+            SearchBar(text: $searchTerm, array: $array)
+            ForEach(array, id:\.self) { item in
+                Text(item) + Text("Test")
             }
         }
     }
 }
-

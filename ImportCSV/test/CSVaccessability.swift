@@ -44,9 +44,9 @@ func csvToList(){
                          print(csvArray[0][headers[0]] as Any)
                              } catch {print("contents could not be loaded")}}
                                 else {print("the URL was bad!")}
-   // arrayFiller()
-    //shitList()
-  
+
+   listBuilder()
+    
     }
 
 
