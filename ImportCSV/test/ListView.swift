@@ -14,12 +14,7 @@ var headerList:[String] = []
 
 
 //Build a header list to sort data.
-func buildHeaderList(header: String){
-if headerList.contains(header){
-headerList.removeAll{ $0 == header }
-} else {headerList.append(header)}
-    print(headerList)
-}
+
 
 //building the list for the ListView() to display
 //takes csvArray and appends each item to formatedList
@@ -40,11 +35,30 @@ func listBuilder(){
 
 struct HeaderView: View {
     @State private var selectedHeader: String?
+    @State private var selectedView = SelectedHeaderView()
+    @State private var select = false
+         @EnvironmentObject var viewToggle: ToggleView
+    
+    
+    func buildHeaderList(header: String){
+        if viewToggle.selectedHeaders.contains(header){
+        viewToggle.selectedHeaders.removeAll{ $0 == header }
+        } else {viewToggle.selectedHeaders.append(header)}
+            print(viewToggle.selectedHeaders)
+        
+    if headerList.contains(header){
+    headerList.removeAll{ $0 == header }
+    } else {headerList.append(header)}
+        print(headerList)
+    }
+    
     var body: some View {
+        HStack{
         List {
             ForEach(headers, id:\.self) { header in
                  Button(action: {print(header)
-                    buildHeaderList(header: header)
+                    self.buildHeaderList(header: header)
+                    self.select = true
                     }) {
                     Text(header)
                      .background(Color.green) // 1. Change the background color to purple
@@ -54,9 +68,24 @@ struct HeaderView: View {
                       }.listRowBackground(self.selectedHeader == header ? Color.blue : Color(UIColor.systemGroupedBackground))
             }
         }
+            if self.select {
+                viewToggle.selectedHeaderView
+            }
+        }
     }
 }
 
+struct SelectedHeaderView: View {
+    @State private var selectedItems = headerList
+     @EnvironmentObject var viewToggle: ToggleView
+    var body: some View {
+        List {
+            ForEach(viewToggle.selectedHeaders, id:\.self) { header in
+            Text(header)
+        }
+        }
+    }
+}
 
 //This ListView presents the search Data...
 //Create another list view to display

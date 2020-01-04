@@ -11,5 +11,6 @@ import SwiftUI
 class ToggleView: ObservableObject {
   
     @Published var toggleView: Bool = false
-
+    @Published var selectedHeaders:[String] = []
+    @Published var selectedHeaderView = SelectedHeaderView()
 }
